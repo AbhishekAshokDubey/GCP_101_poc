@@ -14,8 +14,8 @@ flags.DEFINE_string('input_dir', 'gs://abhi-ml/data', 'contains the input folder
 flags.DEFINE_string('train_files', 'gs://abhi-ml/data/dummydata.csv', 'contains the input file path')
 flags.DEFINE_string('output_dir', 'gs://abhi-ml/output', 'contains the input file path')
 
-local = True # if local machine
-#local = False # if cloud engine
+#local = True # if local machine
+local = False # if cloud engine
 
 batch_size = 5
 no_of_batches = 200
