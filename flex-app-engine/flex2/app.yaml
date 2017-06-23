@@ -1,0 +1,4 @@
+runtime: custom
+env: flex
+entrypoint: gunicorn -b :$PORT helloworld:app
+service: s1

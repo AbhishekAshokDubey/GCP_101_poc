@@ -1,0 +1,9 @@
+runtime: custom
+vm: true
+api_version: 1
+threadsafe: true
+service: s1
+
+handlers:
+- url: /.*
+  script: helloworld.app

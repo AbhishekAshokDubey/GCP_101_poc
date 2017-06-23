@@ -1,0 +1,28 @@
+# https://hub.docker.com/r/genomicpariscentre/macs2/~/dockerfile/
+
+FROM ubuntu:12.04
+
+RUN apt-get update
+
+RUN apt-get install --yes --force-yes build-essential git python python-numpy python-dev cython
+RUN apt-get --yes --force-yes install unzip
+
+ADD https://github.com/AbhishekAshokDubey/101_NLP_preprocessing/archive/master.zip /tmp/
+
+RUN unzip /tmp/*.zip -d /tmp
+
+RUN cd /tmp/101_NLP_preprocessing-master*/ && python setup.py install
+
+# Cleanup
+RUN apt-get clean
+RUN rm -rf /tmp/101_NLP_preprocessing-master
+
+# Default command to execute at startup of the container
+# CMD macs2
+
+
+#RUN apt-get update && apt-get install -y fortunes libespeak-dev
+#ADD requirements.txt /app/
+#RUN pip install -r requirements.txt
+
+#ADD . /app/
